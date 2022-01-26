@@ -5,17 +5,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./duckspinning.gif" type="image/gif" />
+    <link rel="icon" href="duckspinning.gif" type="image/gif" />
     <title>Duck Spinning</title>
+    <link rel="stylesheet" href="css.css">
 </head>
+<!-- Made by Mitsuaky -->
 
 <body>
-    <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);">
-        <img src="./duckspinning.gif">
+    <div>
+        <button id="button">Make It Spin!</button>
+        <img id="duck" style="display: none;" alt="a duck spinning" src="duckspinning.gif">
     </div>
-    <audio loop autoplay>
-        <source src="./duckspinning.mp3" type="audio/mp3">
+    <audio id="audio" loop>
+        <source src="duckspinning.mp3" type="audio/mp3">
     </audio>
+    <script>
+        var button = document.getElementById("button");
+        var duck = document.getElementById("duck");
+        var audio = document.getElementById("audio");
+        var spin = false;
+
+        button.addEventListener("click", function () {
+            button.style.display = "none";
+            duck.style.display = "block";
+            audio.play();
+        });
+    </script>
 </body>
 
 </html>
